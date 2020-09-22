@@ -2,7 +2,7 @@
 ## Sistema em MVC Asp.net e MVC
 *Em Construção*
 - [ ] Inicio
-- [ ] Fincanceiro
+- [ ] Financeiro
 - [ ] Banco de Dados
 
 ### Ferramentas
