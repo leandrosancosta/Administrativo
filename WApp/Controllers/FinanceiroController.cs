@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using WApp.Service.Models;
 
 namespace WApp.Service.Controllers
 {
@@ -88,49 +87,5 @@ namespace WApp.Service.Controllers
 
     }
 
-    public class FinanceiroView
-    {
-        public int Id { get; set; }
-        [DisplayName("Data Compra")]
-        [DataType(DataType.Date)]
-        public DateTime Data { get; set; }
-        [DisplayName("Descrição")]
-        public string Descricao { get; set; }
-        public double Valor { get; set; }
-        [DisplayName("Cobrança")]
-        public int CobrancaId { get; set; }
-        public string Parcelamento { get; set; }
-        [DisplayName("Categoria")]
-        public int CategoriaId { get; set; }
-        [DisplayName("Observação")]
-        public string Observacao { get; set; }
-        [DisplayName("Status")]
-        public int StatusId { get; set; }
-        public DateTime Create { get; set; }
-        public DateTime Modified { get; set; }
-    }
-
-    public class FinanceiroBase
-    {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public int Status { get; set; }
-        public DateTime Create { get; set; }
-        public DateTime Modified { get; set; }
-    }
-
-    public class CategoriaView : FinanceiroBase
-    {
-
-    }
-
-    public class StatusView : FinanceiroBase
-    {
-
-    }
-
-    public class CobrancaView : FinanceiroBase
-    {
-
-    }
+   
 }

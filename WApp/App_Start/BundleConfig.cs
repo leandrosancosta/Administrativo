@@ -26,7 +26,7 @@ namespace WApp
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/Content/popper").Include(
+            bundles.Add(new ScriptBundle("~/bundles/popper").Include(
                       "~/Scripts/umd/popper.js"));
         }
     }
