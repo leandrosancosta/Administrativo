@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WApp.Service.Models.FinanceiroView>
+﻿@model IEnumerable<WApp.Service.Models.Despesa>
 
 @{
     ViewBag.Title = "Financeiro";
@@ -68,7 +68,7 @@
                 <td>
                     @if (item.Observacao.Length > 0)
                     {
-                        <button class="btn btn-info btn-sm" onclick="openObs(@item.Id)" data-toggle="modal" data-target="#ObservacaoModal">
+                        <button class="btn btn-info btn-sm" onclick="openObs(@item.DespesaId)" data-toggle="modal" data-target="#ObservacaoModal">
                             <span class="glyphicon glyphicon-plus"></span>
                         </button>
 

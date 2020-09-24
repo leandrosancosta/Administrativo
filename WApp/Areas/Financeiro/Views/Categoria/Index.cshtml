@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WApp.Service.Models.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Create)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Nome
+                </td>
+                <td>
+                    @if(item.Status == 0)
+                    {
+                        "Inativo"
+                    }
+                    else
+                    {
+                        "Ativo"
+                    }
+
+                </td>
+                <td>
+                    @item.Create
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

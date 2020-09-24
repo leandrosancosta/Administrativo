@@ -153,11 +153,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\FinanceiroController.cs" />
+    <Compile Include="Areas\Financeiro\Controllers\CategoriaController.cs" />
+    <Compile Include="Areas\Financeiro\Controllers\DespesaController.cs" />
+    <Compile Include="Areas\Financeiro\FinanceiroAreaRegistration.cs" />
+    <Compile Include="Context\DataContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009232347280_FinanceiroTable.cs" />
+    <Compile Include="Migrations\202009232347280_FinanceiroTable.Designer.cs">
+      <DependentUpon>202009232347280_FinanceiroTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Financeiro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -181,6 +189,11 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Areas\Financeiro\Views\web.config" />
+    <Content Include="Areas\Financeiro\Views\Despesa\Index.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Despesa\Create.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Categoria\Create.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Categoria\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -290,6 +303,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Financeiro\Data\" />
+    <Folder Include="Areas\Financeiro\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -309,6 +324,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009232347280_FinanceiroTable.resx">
+      <DependentUpon>202009232347280_FinanceiroTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
