@@ -39,8 +39,9 @@ namespace WApp.Service.Models
 
     public class FinanceiroBase
     {
-              
+        [Required(ErrorMessage = "Informe o nome")]
         public string Nome { get; set; }
+        [Required(ErrorMessage = "Informe o status")]
         public int Status { get; set; }
         public DateTime Create { get; set; }
         public DateTime Modified { get; set; }

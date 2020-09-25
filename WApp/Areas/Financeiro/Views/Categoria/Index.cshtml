@@ -6,6 +6,7 @@
 }
 
 
+@Html.ActionLink("Nova Categoria", "Create", new { controller = "Categoria" }, new { @class = "btn btn-primary" })
 
 <table class="table table-striped">
     <thead>
@@ -28,17 +29,19 @@
                 <td>
                     @item.Nome
                 </td>
-                <td>
-                    @if(item.Status == 0)
-                    {
-                        "Inativo"
-                    }
-                    else
-                    {
-                        "Ativo"
-                    }
 
-                </td>
+                @if (item.Status == 0)
+                {
+                    <td>
+                        Inativo
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        Ativo
+                    </td>
+                }
                 <td>
                     @item.Create
                 </td>

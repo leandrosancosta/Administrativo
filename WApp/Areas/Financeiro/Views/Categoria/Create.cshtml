@@ -5,5 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Nova Categoria</h2>
 
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    @Html.LabelFor(model => model.Nome)
+    @Html.EditorFor(model => model.Nome)
+    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+
+    @Html.LabelFor(model => model.Status)
+    @Html.DropDownList("Status", new SelectList(ViewBag.Status, "Value", "Text", "1"))
+    
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+    @Html.ActionLink("Voltar", "Index", new { controller = "Categoria" }, new { @class = "btn btn-default" })
+
+}

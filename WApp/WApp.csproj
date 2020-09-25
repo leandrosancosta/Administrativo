@@ -165,6 +165,10 @@
     <Compile Include="Migrations\202009232347280_FinanceiroTable.Designer.cs">
       <DependentUpon>202009232347280_FinanceiroTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009252003493_CategoriaTable.cs" />
+    <Compile Include="Migrations\202009252003493_CategoriaTable.Designer.cs">
+      <DependentUpon>202009252003493_CategoriaTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Financeiro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -328,6 +332,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009232347280_FinanceiroTable.resx">
       <DependentUpon>202009232347280_FinanceiroTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009252003493_CategoriaTable.resx">
+      <DependentUpon>202009252003493_CategoriaTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
