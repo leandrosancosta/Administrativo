@@ -18,7 +18,7 @@
                 @Html.DisplayNameFor(model => model.Status)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Create)
+                Ações
             </th>
         </tr>
     </thead>
@@ -43,9 +43,21 @@
                     </td>
                 }
                 <td>
-                    @item.Create
+                    <button class="btn btn-primary edit" value="@item.CategoriaId"><span class="glyphicon glyphicon-pencil"></span></button>
+                    <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+@section scripts{
+    <script type="text/javascript">
+        $(".edit").click(
+            function (ev) {
+                var id = ev.target.value
+                window.location.href = "/financeiro/categoria/edit/" + id
+            }
+        )
+    </script>
+    }

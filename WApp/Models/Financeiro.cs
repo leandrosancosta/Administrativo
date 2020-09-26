@@ -46,7 +46,7 @@ namespace WApp.Service.Models
         public DateTime Create { get; set; }
         public DateTime Modified { get; set; }
 
-        public ICollection<Despesa> Despesas { get; set; }
+        public virtual ICollection<Despesa> Despesas { get; set; }
     }
 
     public class Categoria : FinanceiroBase

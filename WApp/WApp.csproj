@@ -169,6 +169,10 @@
     <Compile Include="Migrations\202009252003493_CategoriaTable.Designer.cs">
       <DependentUpon>202009252003493_CategoriaTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009252330326_CategoriaTable1.cs" />
+    <Compile Include="Migrations\202009252330326_CategoriaTable1.Designer.cs">
+      <DependentUpon>202009252330326_CategoriaTable1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Financeiro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,6 +202,7 @@
     <Content Include="Areas\Financeiro\Views\Despesa\Create.cshtml" />
     <Content Include="Areas\Financeiro\Views\Categoria\Create.cshtml" />
     <Content Include="Areas\Financeiro\Views\Categoria\Index.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Categoria\Edit.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -335,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009252003493_CategoriaTable.resx">
       <DependentUpon>202009252003493_CategoriaTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009252330326_CategoriaTable1.resx">
+      <DependentUpon>202009252330326_CategoriaTable1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
