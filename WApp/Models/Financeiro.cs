@@ -56,7 +56,8 @@ namespace WApp.Service.Models
         public int CategoriaId { get; set; }
     }
 
-    public class Situacao : FinanceiroBase { 
+    public class Situacao : FinanceiroBase
+    {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SituacaoId { get; set; }
@@ -64,8 +65,19 @@ namespace WApp.Service.Models
 
     public class Cobranca : FinanceiroBase
     {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int CobrancaId { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int CobrancaId { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayName("Data de Cobrança")]
+        public DateTime? DataCobranca { get; set; }
+
+        [DisplayName("Data de Fechamento da Fatura")]
+        [DataType(DataType.Date)]
+        public DateTime? DataFatura { get; set; }
+
+        [DisplayName("Tipo de Cobrança")]
+        public Int16 TipoCobranca { get; set; }
     }
 }

@@ -1,42 +1,44 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using WApp.Service.Context;
 using WApp.Service.Models;
 
 namespace WApp.Service.Areas.Financeiro.Controllers
 {
-    public class CategoriaController : Controller
+    public class CobrancaController : Controller
     {
         private DataContext _context = new DataContext();
-        // GET: Financeiro/Categoria
+        
         public ActionResult Index()
         {
-            IQueryable<Categoria> categoria;
+            IQueryable<Cobranca> cobrancas;
 
-            categoria = _context.Categorias.OrderBy(c => c.Nome);
+            cobrancas = _context.Cobrancas.OrderBy(c => c.Nome);
 
-            return View(categoria);
+            return View(cobrancas);
         }
 
         public ActionResult Create()
         {
-            ViewBagStatus();
+            SetViewBag();
 
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Categoria categoria)
+        public ActionResult Create(Cobranca categoria)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     categoria.Create = DateTime.Now;
-                    _context.Categorias.Add(categoria);
+                    _context.Cobrancas.Add(categoria);
 
                     _context.SaveChanges();
                     return RedirectToAction("Index");
@@ -61,15 +63,15 @@ namespace WApp.Service.Areas.Financeiro.Controllers
                 return RedirectToAction("Index");
             }
 
-            Categoria categoria = _context.Categorias.Where(c => c.CategoriaId == id).FirstOrDefault();
-            ViewBagStatus(categoria);
+            Cobranca cobranca = _context.Cobrancas.Where(c => c.CobrancaId == id).FirstOrDefault();
+            SetViewBag(cobranca);
 
-            return View(categoria);
+            return View(cobranca);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Categoria categoria)
+        public ActionResult Edit(Cobranca categoria)
         {
 
             try
@@ -100,12 +102,11 @@ namespace WApp.Service.Areas.Financeiro.Controllers
         {
             try
             {
-                int id;
-                int.TryParse(form["deleteId"],out id);
+                int.TryParse(form["deleteId"], out int id);
 
-                Categoria categoria = _context.Categorias.Where(c => c.CategoriaId == id).FirstOrDefault();
+                Cobranca categoria = _context.Cobrancas.Where(c => c.CobrancaId == id).FirstOrDefault();
 
-                _context.Categorias.Remove(categoria);
+                _context.Cobrancas.Remove(categoria);
                 _context.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -117,7 +118,7 @@ namespace WApp.Service.Areas.Financeiro.Controllers
         }
 
         #region metódos privados
-        private void ViewBagStatus(Categoria categoria = null)
+        private void SetViewBag(Cobranca cobranca = null)
         {
             var Status = new[]
             {
@@ -125,13 +126,22 @@ namespace WApp.Service.Areas.Financeiro.Controllers
                 new SelectListItem {Value = "0", Text = "Inativo"}
             };
 
-            if (categoria == null)
+            var Tipo = new[]
+            {
+                new SelectListItem {Value = "0", Text = "Débito"},
+                new SelectListItem {Value = "1", Text = "Crédito"},
+            };
+
+
+            if (cobranca == null)
             {
                 ViewBag.Status = new SelectList(Status, "Value", "Text");
+                ViewBag.Tipo = new SelectList(Tipo, "Value", "Text");
             }
             else
             {
-                ViewBag.Status = new SelectList(Status, "Value", "Text", categoria.Status);
+                ViewBag.Status = new SelectList(Status, "Value", "Text", cobranca.Status);
+                ViewBag.Tipo = new SelectList(Tipo, "Value", "Text");
             }
         }
 

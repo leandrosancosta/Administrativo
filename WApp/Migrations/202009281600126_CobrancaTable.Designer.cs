@@ -7,13 +7,13 @@ namespace WApp.Service.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CategoriaTable1 : IMigrationMetadata
+    public sealed partial class CobrancaTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CategoriaTable1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CobrancaTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009252330326_CategoriaTable1"; }
+            get { return "202009281600126_CobrancaTable"; }
         }
         
         string IMigrationMetadata.Source
