@@ -1,3 +1,6 @@
 .vs
 packages
-WApp/obj
+Service/obj
+Business/obj
+Core/obj
+Repository/obj
