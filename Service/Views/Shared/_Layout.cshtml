@@ -9,13 +9,21 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-dark">
+            @Html.ActionLink("My App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </nav>
+    </header>
     <div class="container body-content">
         @RenderBody()
+        <hr />
+        <footer></footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/popper")
     @Scripts.Render("~/bundles/bootstrap")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -1,6 +1,7 @@
 ﻿using Core.Financeiro;
 using Repository.Context;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Repository.DAL.Financeiro
@@ -13,6 +14,16 @@ namespace Repository.DAL.Financeiro
         public IQueryable GetCategoriaList()
         {
             return _context.Categorias.OrderBy(c => c.Nome);
+        }
+
+        public void SaveCategoria(Categoria categoria)
+        {
+            if (categoria.Id == null)
+                _context.Categorias.Add(categoria);
+            else
+                _context.Entry(categoria).State = EntityState.Modified;
+
+            _context.SaveChanges();
         }
 
     }

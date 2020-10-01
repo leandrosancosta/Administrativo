@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+using System.Web.Mvc;
 
-namespace Service.Models.Financeiro
+namespace Service.Areas.Financeiro.Models
 {
     public class FinanceiroBaseView
     {
         [Required(ErrorMessage = "Informe o nome")]
+        [MaxLength(50,ErrorMessage = "Tamanho máximo de 50 caracteres")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Informe o status")]
         public int Status { get; set; }

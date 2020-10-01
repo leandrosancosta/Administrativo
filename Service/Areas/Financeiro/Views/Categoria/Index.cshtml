@@ -5,18 +5,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@if (ViewBag.Message != null)
+{
+    if (ViewBag.TypeMsg == "success")
+    {
+        <div class="alert alert-secondary" role="alert">
+            @ViewBag.Message
+        </div>
+    }
+}
+
+@Html.ActionLink("Nova Categoria", "Create", new { controller = "Categoria" }, new { @class = "btn btn-primary" })
+
+<br />
 
 <table class="table table-striped">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(c => c.Nome)
+                @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(c => c.Status)
+                @Html.DisplayNameFor(model => model.Status)
             </th>
             <th>
-                Opções
+                Ações
             </th>
         </tr>
     </thead>
@@ -29,28 +42,28 @@
                     <td>
                         @item.Nome
                     </td>
-                    @if (item.Status == 1)
-                    {
-                        <td>
-                            Ativo
-                        </td>
-                    }
-                    else
+
+                    @if (item.Status == 0)
                     {
                         <td>
                             Inativo
                         </td>
                     }
+                    else
+                    {
+                        <td>
+                            Ativo
+                        </td>
+                    }
                     <td></td>
                 </tr>
             }
-
         }
         else
         {
             <tr>
-                <td colspan="3">
-                    <p>Não há items para mostrar</p>
+                <td colspan="3" class="text-center">
+                    Não há categorias para exibir
                 </td>
             </tr>
         }

@@ -8,7 +8,7 @@ namespace Core.Financeiro
 {
     public class FinanceiroBase
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Nome { get; set; }
         public int Status { get; set; }
         public DateTime Create { get; set; }

@@ -147,8 +147,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Financeiro\CategoriaView.cs" />
-    <Compile Include="Models\Financeiro\FinanceiroBaseView.cs" />
+    <Compile Include="Areas\Financeiro\Models\CategoriaView.cs" />
+    <Compile Include="Areas\Financeiro\Models\FinanceiroBaseView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +194,7 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Areas\Financeiro\Views\web.config" />
     <Content Include="Areas\Financeiro\Views\Categoria\Index.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Categoria\Create.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -303,8 +304,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Financeiro\Models\" />
     <Folder Include="Areas\Financeiro\Views\Shared\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
