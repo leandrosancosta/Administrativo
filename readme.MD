@@ -19,3 +19,7 @@
 - [ ] Listar despesas 
 - [ ] Adicionar nova despesa
 - [ ] Editar despesas
+- [ ] Apagar despesas
+- [ ] Adicionar Categoria de Despesa
+- [ ] Editar Categoria de Despesa
+- [ ] Apagar Categoria de Despesa **Não remover da base**

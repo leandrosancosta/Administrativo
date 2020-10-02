@@ -16,6 +16,11 @@ namespace Repository.DAL.Financeiro
             return _context.Categorias.OrderBy(c => c.Nome);
         }
 
+        public Categoria GetCategoriaById(int id)
+        {
+            return _context.Categorias.Where(c => c.Id == id).FirstOrDefault();
+        }
+
         public void SaveCategoria(Categoria categoria)
         {
             if (categoria.Id == null)

@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-4">
                 @Html.LabelFor(model => model.Status)
-                @Html.DropDownListFor(model => model.Status, (SelectList)ViewBag.Status, new { @class = "form-control" })
+                @Html.DropDownList("Status", new SelectList(ViewBag.List, "Value", "Text","1"), new { @class = "form-control" })
             </div>
             <div class="col-md-12 form-buttons">
                 <button type="submit" class="btn btn-success">Salvar</button>

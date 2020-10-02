@@ -195,6 +195,7 @@
     <Content Include="Areas\Financeiro\Views\web.config" />
     <Content Include="Areas\Financeiro\Views\Categoria\Index.cshtml" />
     <Content Include="Areas\Financeiro\Views\Categoria\Create.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Categoria\Edit.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

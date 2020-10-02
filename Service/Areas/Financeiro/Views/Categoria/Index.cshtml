@@ -55,7 +55,10 @@
                             Ativo
                         </td>
                     }
-                    <td></td>
+                    <td>
+                        <button class="btn btn-primary edit" onclick="toEdit(@item.Id)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" onclick="toRemove(@item.Id, '@item.Nome')"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </td>
                 </tr>
             }
         }
@@ -69,3 +72,45 @@
         }
     </tbody>
 </table>
+
+@* Modal de Delete *@
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Remover categoria</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("Delete", "Categoria", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <input type="hidden" id="deleteId" name="deleteId" />
+                <div class="modal-body">
+                    <p>Deseja remover a categoria <span id="deleteName"></span>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-default">Cancelar</button>
+                    <button type="submit" class="btn-default">Excluir</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script type="text/javascript">
+        function toEdit(id) {
+            window.location.href = "/financeiro/categoria/edit/" + id
+        }
+
+        function toRemove(id, name) {
+            $("#deleteId").val(id);
+            $("#deleteName").text(name);
+        }
+    </script>
+}

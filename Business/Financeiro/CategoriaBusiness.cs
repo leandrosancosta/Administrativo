@@ -13,6 +13,11 @@ namespace Business.Financeiro
             return categoriaDAL.GetCategoriaList();
         }
 
+        public Categoria GetCategoriaById(int id)
+        {
+            return categoriaDAL.GetCategoriaById(id);
+        }
+
         public void SaveCategoria(Categoria categoria)
         {
             categoriaDAL.SaveCategoria(categoria);
