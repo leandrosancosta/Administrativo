@@ -11,6 +11,7 @@
 - MVC 5
 - Asp.Net Framework 4.7.2
 - Popper 1.16.1
+- Entity Framework
 
 ### Inicio
 **não desenvolvido**
@@ -21,5 +22,6 @@
 - [ ] Editar despesas
 - [ ] Apagar despesas
 - [ ] Adicionar Categoria de Despesa
+- [ ] Listar Categorias de Despesa
 - [ ] Editar Categoria de Despesa
-- [ ] Apagar Categoria de Despesa **Não remover da base**
+- [ ] Apagar Categoria de Despesa - **Não remover da base**

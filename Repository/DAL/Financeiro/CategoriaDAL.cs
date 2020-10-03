@@ -1,17 +1,20 @@
 ﻿using Core.Financeiro;
-using Repository.Context;
-using System.Collections.Generic;
+using Repository.DAL.Padrao;
+using System;
 using System.Data.Entity;
 using System.Linq;
 
 namespace Repository.DAL.Financeiro
 {
-    public class CategoriaDAL
+    public class CategoriaDAL : PadraoContext
     {
-        private DataContext _context = new DataContext();
 
 
         public IQueryable GetCategoriaList()
+        {
+            return _context.Categorias.Where(c => c.Status < 99).OrderBy(c => c.Nome);
+        }
+        public IQueryable GetAllCategoriaList()
         {
             return _context.Categorias.OrderBy(c => c.Nome);
         }
@@ -24,9 +27,15 @@ namespace Repository.DAL.Financeiro
         public void SaveCategoria(Categoria categoria)
         {
             if (categoria.Id == null)
+            {
+                categoria.Create = DateTime.Now;
                 _context.Categorias.Add(categoria);
+            }
             else
+            {
+                categoria.Modified = DateTime.Now;
                 _context.Entry(categoria).State = EntityState.Modified;
+            }
 
             _context.SaveChanges();
         }

@@ -1,5 +1,6 @@
 ﻿using Core.Financeiro;
 using Repository.DAL.Financeiro;
+using System;
 using System.Linq;
 
 namespace Business.Financeiro
@@ -21,6 +22,22 @@ namespace Business.Financeiro
         public void SaveCategoria(Categoria categoria)
         {
             categoriaDAL.SaveCategoria(categoria);
+        }
+
+
+        public bool DeleteCategoria(int id)
+        {
+            try
+            {
+                Categoria categoria = GetCategoriaById(id);
+                categoria.Status = 99;
+                SaveCategoria(categoria);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

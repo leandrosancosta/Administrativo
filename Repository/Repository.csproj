@@ -67,7 +67,8 @@
   <ItemGroup>
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="DAL\Financeiro\CategoriaDAL.cs" />
-    <Compile Include="DAL\Padrao\Padrao.cs" />
+    <Compile Include="DAL\Financeiro\CobrancaDAL.cs" />
+    <Compile Include="DAL\Padrao\PadraoContext.cs" />
     <Compile Include="Migrations\202009291932159_DespesaMigration.cs" />
     <Compile Include="Migrations\202009291932159_DespesaMigration.designer.cs">
       <DependentUpon>202009291932159_DespesaMigration.cs</DependentUpon>
@@ -75,6 +76,10 @@
     <Compile Include="Migrations\202009291942430_CategoriaTable.cs" />
     <Compile Include="Migrations\202009291942430_CategoriaTable.designer.cs">
       <DependentUpon>202009291942430_CategoriaTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010031456157_CobrancaTable.cs" />
+    <Compile Include="Migrations\202010031456157_CobrancaTable.designer.cs">
+      <DependentUpon>202010031456157_CobrancaTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009291942430_CategoriaTable.resx">
       <DependentUpon>202009291942430_CategoriaTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010031456157_CobrancaTable.resx">
+      <DependentUpon>202010031456157_CobrancaTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

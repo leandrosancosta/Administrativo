@@ -105,8 +105,7 @@ namespace Service.Areas.Financeiro.Controllers
                     {
                         Id = categoria.Id,
                         Nome = categoria.Nome,
-                        Status = categoria.Status,
-                        Modified = DateTime.Now
+                        Status = categoria.Status
                     };
 
                     cb.SaveCategoria(eCategoria);
@@ -131,7 +130,11 @@ namespace Service.Areas.Financeiro.Controllers
             try
             {
                 int.TryParse(form["deleteId"], out int id);
-
+                if (cb.DeleteCategoria(id))
+                {
+                    ViewBag.Message = "Categoria " + form["Nome"] + " salva com sucesso";
+                    ViewBag.TypeMsg = "success";
+                }
                 return RedirectToAction("Index");
             }
             catch

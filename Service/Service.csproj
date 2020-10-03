@@ -142,7 +142,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Financeiro\Controllers\CategoriaController.cs" />
+    <Compile Include="Areas\Financeiro\Controllers\CobrancaController.cs" />
     <Compile Include="Areas\Financeiro\FinanceiroAreaRegistration.cs" />
+    <Compile Include="Areas\Financeiro\Models\CobrancaView.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -305,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Financeiro\Views\Cobranca\" />
     <Folder Include="Areas\Financeiro\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
