@@ -21,7 +21,11 @@
 - [ ] Adicionar nova despesa
 - [ ] Editar despesas
 - [ ] Apagar despesas
-- [ ] Adicionar Categoria de Despesa
-- [ ] Listar Categorias de Despesa
-- [ ] Editar Categoria de Despesa
-- [ ] Apagar Categoria de Despesa - **Não remover da base**
+- [x] Adicionar Categoria de Despesa
+- [x] Listar Categorias de Despesa
+- [x] Editar Categoria de Despesa
+- [x] Apagar Categoria de Despesa - **Não remover da base**
+- [x] Adicionar Tipo de Cobranca de Despesa
+- [x] Listar Tipo de Cobranca de Despesa
+- [x] Editar Tipo de Cobranca de Despesa
+- [x] Apagar Tipo de Cobranca de Despesa - **Não remover da base**

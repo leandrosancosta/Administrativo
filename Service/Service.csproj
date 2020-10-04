@@ -198,6 +198,9 @@
     <Content Include="Areas\Financeiro\Views\Categoria\Index.cshtml" />
     <Content Include="Areas\Financeiro\Views\Categoria\Create.cshtml" />
     <Content Include="Areas\Financeiro\Views\Categoria\Edit.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Cobranca\Index.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Cobranca\Create.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Cobranca\Edit.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -307,7 +310,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Financeiro\Views\Cobranca\" />
     <Folder Include="Areas\Financeiro\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>

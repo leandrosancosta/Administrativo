@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Financeiro
 {
-    class CobrancaBusiness
+    public class CobrancaBusiness
     {
         CobrancaDAL cd = new CobrancaDAL();
         public IQueryable GetCobrancasList()
@@ -28,6 +28,8 @@ namespace Business.Financeiro
 
         public void SaveCobranca(Cobranca cobranca)
         {
+            cobranca.DtVencimentoFatura = cobranca.TipoCobranca.ToString().Contains("Débito") ? 0 : cobranca.DtVencimentoFatura;
+            cobranca.DtFechamentoFatura = cobranca.TipoCobranca.ToString().Contains("Débito") ? 0 : cobranca.DtFechamentoFatura;
             cd.SaveCobranca(cobranca);
         }
 

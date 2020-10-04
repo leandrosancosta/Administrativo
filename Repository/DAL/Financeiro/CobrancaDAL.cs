@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System;
 using System.Linq;
 using Repository.DAL.Padrao;
+using System.Data.Entity.Migrations;
 
 namespace Repository.DAL.Financeiro
 {
@@ -34,8 +35,10 @@ namespace Repository.DAL.Financeiro
             }
             else
             {
+                Cobranca cob = GetCobrancaById((int)cobranca.Id);
+                cobranca.Create = cob.Create;
                 cobranca.Modified = DateTime.Now;
-                _context.Entry(cobranca).State = EntityState.Modified;
+                _context.Cobrancas.AddOrUpdate<Cobranca>(cobranca);
             }
 
             _context.SaveChanges();

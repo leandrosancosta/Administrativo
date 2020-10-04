@@ -2,6 +2,7 @@
 using Repository.DAL.Padrao;
 using System;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace Repository.DAL.Financeiro
@@ -33,8 +34,11 @@ namespace Repository.DAL.Financeiro
             }
             else
             {
+                Categoria cat = GetCategoriaById((int)categoria.Id);
+                categoria.Create = cat.Create;
                 categoria.Modified = DateTime.Now;
-                _context.Entry(categoria).State = EntityState.Modified;
+                //_context.Entry(categoria).State = EntityState.Modified;
+                _context.Categorias.AddOrUpdate<Categoria>(categoria);
             }
 
             _context.SaveChanges();

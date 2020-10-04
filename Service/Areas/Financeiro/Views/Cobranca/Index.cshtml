@@ -1,24 +1,10 @@
-﻿@model IEnumerable<Core.Financeiro.Categoria>
+﻿@model IEnumerable<Core.Financeiro.Cobranca>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@if (ViewBag.Message != null)
-{
-    if (ViewBag.TypeMsg == "success")
-    {
-        <div class="alert alert-secondary" role="alert">
-            @ViewBag.Message
-        </div>
-    }
-}
-
-@Html.ActionLink("Nova Categoria", "Create", new { controller = "Categoria" }, new { @class = "btn btn-primary" })
-
-<br />
-
+@Html.ActionLink("Nova Cobrança", "Create", new { controller = "Cobranca" }, new { @class = "btn btn-primary" })
 <table class="table table-striped">
     <thead>
         <tr>
@@ -27,6 +13,15 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                Fechamento da Fatura
+            </th>
+            <th>
+                Vencimento Fatura
+            </th>
+            <th>
+                Tipo de Cobrança
             </th>
             <th>
                 Ações
@@ -40,21 +35,42 @@
             {
                 <tr>
                     <td>
-                        @item.Nome
+                        @Html.DisplayFor(modelItem => item.Nome)
                     </td>
+                    @if (item.Status == 1)
+                    {
+                        <td>
+                            Ativo
+                        </td>
 
-                    @if (item.Status == 0)
+                    }
+                    else
                     {
                         <td>
                             Inativo
                         </td>
                     }
+                    @if (item.DtVencimentoFatura < 1)
+                    {
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                    }
                     else
                     {
                         <td>
-                            Ativo
+                            @Html.DisplayFor(modelItem => item.DtFechamentoFatura)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DtVencimentoFatura)
                         </td>
                     }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoCobranca)
+                    </td>
                     <td>
                         <button class="btn btn-primary edit" onclick="toEdit(@item.Id)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                         <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" onclick="toRemove(@item.Id, '@item.Nome')"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -65,12 +81,13 @@
         else
         {
             <tr>
-                <td colspan="3" class="text-center">
-                    Não há categorias para exibir
+                <td colspan="6" class="text-center">
+                    Não há dados para apresentar
                 </td>
             </tr>
         }
     </tbody>
+
 </table>
 
 @* Modal de Delete *@
@@ -84,16 +101,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @using (Html.BeginForm("Delete", "Categoria", FormMethod.Post))
+            @using (Html.BeginForm("Delete", "Cobranca", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
                 <input type="hidden" id="deleteId" name="deleteId" />
                 <div class="modal-body">
-                    <p>Deseja remover a categoria <span id="deleteName"></span>?</p>
+                    <p>Deseja remover a cobranca <span id="deleteName"></span>?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-default btn" data-dismiss="modal" aria-label="Close">Cancelar</button>
-                    <button type="submit" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Excluir</button>
+                    <button type="submit" data-dismiss="modal" aria-label="Close" class="btn-danger btn">Excluir</button>
                 </div>
             }
         </div>
@@ -105,7 +122,7 @@
 @section scripts{
     <script type="text/javascript">
         function toEdit(id) {
-            window.location.href = "/financeiro/categoria/edit/" + id
+            window.location.href = "/financeiro/cobranca/edit/" + id
         }
 
         function toRemove(id, name) {

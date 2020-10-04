@@ -1,0 +1,62 @@
+﻿@model Service.Areas.Financeiro.Models.CobrancaView
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-row">
+            <div class="col-md-8">
+                @Html.LabelFor(model => model.Nome)
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Status)
+                @Html.DropDownList("Status", new SelectList(ViewBag.List, "Value", "Text", "1"), new { @class = "form-control" })
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.TipoCobranca)
+                @Html.DropDownList("TipoCobranca", EnumHelper.GetSelectList(typeof(Service.Areas.Financeiro.Models.TipoCobranca)), new { @class = "form-control", id = "tipoCobranca" })
+            </div>
+        </div>
+        <div id="creditoCobranca" class="form-row d-none">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.DtFechamentoFatura)
+                @Html.DropDownList("DtFechamentoFatura", Enumerable.Range(1, 30).Select(x => new SelectListItem { Text = x.ToString(),Value = x.ToString() }), new { @class = "form-control"})
+            </div>
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.DtVencimentoFatura)
+                @Html.DropDownList("DtVencimentoFatura", Enumerable.Range(1, 30).Select(x => new SelectListItem { Text = x.ToString(),Value = x.ToString() }), new { @class = "form-control"})
+            </div>
+        </div>
+        <div class="col-md-12 form-buttons">
+            <button type="submit" class="btn btn-success">Salvar</button>
+            @Html.ActionLink("Voltar", "index", new { controller = "Cobranca" }, htmlAttributes: new { @class = "btn btn-default" })
+        </div>
+    </div>
+}
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#tipoCobranca").change(function () {
+                var index = $("#tipoCobranca").val();
+                var text = $("#tipoCobranca")[0].options[index].text;
+
+                if (!text.toLowerCase().includes("débito")) {
+                    if ($("#creditoCobranca").hasClass("d-none")) {
+                        $("#creditoCobranca").removeClass("d-none");
+                    }
+                } else {
+                    if (!$("#creditoCobranca").hasClass("d-none")) {
+                        $("#creditoCobranca").addClass("d-none");
+                    }
+                }
+            })
+        })
+    </script>
+}
