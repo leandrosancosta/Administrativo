@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Core.Financeiro.Despesa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Nova Despesa","Create", new { controller = "Despesa"}, new { @class = "btn btn-primary" })
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Data)</th>
+            <th>Descrição</th>
+            <th>Observação</th>
+            <th>@Html.DisplayNameFor(model => model.Valor)</th>
+            <th>@Html.DisplayNameFor(model => model.Parcelamento)</th>
+            <th>Categoria</th>
+            <th>Tipo de Cobrança</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+           <td>@Html.DisplayFor(mi => item.Data)</td>
+           <td>@Html.DisplayFor(mi => item.Descricao)</td>
+           <td></td>
+           <td>@Html.DisplayFor(mi => item.Valor)</td>
+           <td>@Html.DisplayFor(mi => item.Parcelamento)</td>
+           <td>@Html.DisplayFor(mi => item.Categoria.Nome)</td>
+           <td>@Html.DisplayFor(mi => item.Cobranca.Nome)</td>
+           <td></td>   
+        }
+    }
+    else
+    {
+        <td colspan="8" class="text-center">Não há despesas para apresentar</td>
+    }
+
+        </tbody>
+
+    </table>

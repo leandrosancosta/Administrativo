@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Financeiro\CategoriaBusiness.cs" />
     <Compile Include="Financeiro\CobrancaBusiness.cs" />
+    <Compile Include="Financeiro\DespesaBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

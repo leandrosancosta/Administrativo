@@ -19,6 +19,11 @@ namespace Repository.DAL.Financeiro
             return _context.Cobrancas.OrderBy(c => c.Id);
         }
 
+        public int GetQtdCobrancas()
+        {
+            return _context.Cobrancas.Where(c => c.Status < 99).Count();
+        }
+
         public Cobranca GetCobrancaById(int id)
         {
             Cobranca cobranca = _context.Cobrancas.Where(c => c.Id == id).FirstOrDefault();

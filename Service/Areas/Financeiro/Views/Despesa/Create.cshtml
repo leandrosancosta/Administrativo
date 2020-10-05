@@ -1,0 +1,89 @@
+﻿@model Service.Areas.Financeiro.Models.DespesaView
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.CobrancaId == null || ViewBag.CategoriaId == null)
+{
+    <div class="row d-flex justify-content-around">
+
+        @if (ViewBag.CobrancaId == null)
+        {
+            <div class="card">
+                <div class="card-body">
+                    Você não tem tipos de cobranças cadastradas. <br /> Deseja cadastrar uma nova cobrança?
+                </div>
+                <div class="card-footer text-center">
+                    @Html.ActionLink("Voltar", "Index", "Despesa", htmlAttributes: new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Criar", "Create", new { @controller = "Cobranca" }, htmlAttributes: new { @class = "btn btn-info" })
+                </div>
+            </div>
+        }
+        @if (ViewBag.CategoriaId == null)
+        {
+            <div class="card">
+                <div class="card-body">
+                    Você não tem categorias cadastradas. <br /> Deseja cadastrar uma nova categoria?
+                </div>
+                <div class="card-footer text-center">
+                    @Html.ActionLink("Voltar", "Index", "Despesa", htmlAttributes: new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Criar", "Create", new { @controller = "Categoria" }, htmlAttributes: new { @class = "btn btn-info" })
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    using (Html.BeginForm())
+    {
+
+        <div class="form-row">
+            <div class="form-group col-6">
+                @Html.DisplayNameFor(model => model.Descricao)
+                @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ex.: Mercado" } })
+            </div>
+            <div class="form-group col-2">
+                @Html.DisplayNameFor(model => model.CategoriaId)@Html.ActionLink("+", "Create", new { @controller = "Categoria" }, htmlAttributes: new { @class = "text-info" })
+                @Html.DropDownListFor(x => x.CategoriaId, ViewBag.CategoriaId as SelectList, new { @class = "form-control" })
+            </div>
+            <div class="form-group col-2">
+                @Html.DisplayNameFor(model => model.CobrancaId)@Html.ActionLink("+", "Create", new { @controller = "Cobranca" }, htmlAttributes: new { @class = "text-info" })
+                @Html.DropDownListFor(model => model.CobrancaId, ViewBag.CobrancaId as SelectList, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-4">
+                @Html.DisplayNameFor(model => model.Data)
+                @Html.EditorFor(model => model.Data, new { htmlAttributes = new { @class = "form-control", id = "dataDespesa" } })
+            </div>
+            <div class="form-group col-4">
+                @Html.DisplayNameFor(model => model.Valor)
+                @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control"} })
+            </div>
+            <div class="form-group col-4">
+                @Html.DisplayNameFor(model => model.Parcelamento)
+                @Html.EditorFor(model => model.Parcelamento, new { htmlAttributes = new { @class = "form-control"} })
+            </div>
+        </div>
+        <div class="form-row">
+            @Html.LabelFor(model => model.Observacao)
+            @Html.TextAreaFor(model => model.Observacao, htmlAttributes: new { @class = "form-control", rows="5"} )
+        </div>
+    }
+
+}
+
+
+
+@section scripts{
+    <script type="text/javascript">
+        var now = new Date();
+        var month = now.getMonth() + 1 <= 9 ? '0' + (now.getMonth() + 1) : (now.getMonth() + 1);
+        var day = now.getDate() < 10 ? '0' + now.getDate() : now.getDate();
+        var today = now.getFullYear() + '-' + month + '-' + day;
+        $("#dataDespesa").val(today)
+    </script>
+}

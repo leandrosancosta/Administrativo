@@ -1,7 +1,6 @@
 ﻿using Core.Financeiro;
 using Repository.DAL.Padrao;
 using System;
-using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
@@ -11,10 +10,16 @@ namespace Repository.DAL.Financeiro
     {
 
 
-        public IQueryable GetCategoriaList()
+        public IQueryable<Categoria> GetCategoriaList()
         {
             return _context.Categorias.Where(c => c.Status < 99).OrderBy(c => c.Nome);
         }
+
+        public int GetQtdCategoria()
+        {
+            return _context.Categorias.Where(c => c.Status < 99).Count();
+        }
+
         public IQueryable GetAllCategoriaList()
         {
             return _context.Categorias.OrderBy(c => c.Nome);

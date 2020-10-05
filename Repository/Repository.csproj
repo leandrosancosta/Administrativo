@@ -68,6 +68,7 @@
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="DAL\Financeiro\CategoriaDAL.cs" />
     <Compile Include="DAL\Financeiro\CobrancaDAL.cs" />
+    <Compile Include="DAL\Financeiro\DespesaDAL.cs" />
     <Compile Include="DAL\Padrao\PadraoContext.cs" />
     <Compile Include="Migrations\202009291932159_DespesaMigration.cs" />
     <Compile Include="Migrations\202009291932159_DespesaMigration.designer.cs">

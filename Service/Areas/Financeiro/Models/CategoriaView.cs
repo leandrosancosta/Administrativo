@@ -7,6 +7,5 @@ namespace Service.Areas.Financeiro.Models
 {
     public class CategoriaView : FinanceiroBaseView
     {
-
     }
 }

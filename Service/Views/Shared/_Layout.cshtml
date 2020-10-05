@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
@@ -10,8 +10,17 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-dark">
-            @Html.ActionLink("My App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <nav class="navbar bg-dark">
+            @Html.ActionLink("My App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-light" })
+
+                <ul class="nav justify-content-end">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Financeiro</a> 
+                        <div class="dropdown-menu dropdown-menu-right bg-dark">
+                            @Html.ActionLink("Despesas", "Index", "Despesa", new { area = "Financeiro" }, new { @class = "nav-link active text-light" })
+                        </div>
+                    </li>
+                </ul>
         </nav>
     </header>
     <div class="container body-content">

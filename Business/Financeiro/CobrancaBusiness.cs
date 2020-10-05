@@ -21,6 +21,11 @@ namespace Business.Financeiro
             return cd.GetAllCobrancas();
         }
 
+        public int GetQtdCobrancas()
+        {
+            return cd.GetQtdCobrancas();
+        }
+
         public Cobranca GetCobrancaById(int id)
         {
             return cd.GetCobrancaById(id);

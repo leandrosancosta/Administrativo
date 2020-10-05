@@ -17,7 +17,7 @@
 **não desenvolvido**
 
 ### Financeiro
-- [ ] Listar despesas 
+- [x] Listar despesas 
 - [ ] Adicionar nova despesa
 - [ ] Editar despesas
 - [ ] Apagar despesas
@@ -29,3 +29,4 @@
 - [x] Listar Tipo de Cobranca de Despesa
 - [x] Editar Tipo de Cobranca de Despesa
 - [x] Apagar Tipo de Cobranca de Despesa - **Não remover da base**
+- [ ] Paginação

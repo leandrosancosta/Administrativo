@@ -11,5 +11,7 @@ namespace Core.Financeiro
         public int DtFechamentoFatura { get; set; }
         public int DtVencimentoFatura { get; set; }
         public string TipoCobranca { get; set; }
+
+        public virtual ICollection<Despesa> Despesas { get; set; }
     }
 }

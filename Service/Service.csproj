@@ -143,8 +143,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Financeiro\Controllers\CategoriaController.cs" />
     <Compile Include="Areas\Financeiro\Controllers\CobrancaController.cs" />
+    <Compile Include="Areas\Financeiro\Controllers\DespesaController.cs" />
     <Compile Include="Areas\Financeiro\FinanceiroAreaRegistration.cs" />
     <Compile Include="Areas\Financeiro\Models\CobrancaView.cs" />
+    <Compile Include="Areas\Financeiro\Models\DespesaView.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -201,6 +203,8 @@
     <Content Include="Areas\Financeiro\Views\Cobranca\Index.cshtml" />
     <Content Include="Areas\Financeiro\Views\Cobranca\Create.cshtml" />
     <Content Include="Areas\Financeiro\Views\Cobranca\Edit.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Despesa\Index.cshtml" />
+    <Content Include="Areas\Financeiro\Views\Despesa\Create.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

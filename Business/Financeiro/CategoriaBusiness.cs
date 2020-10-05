@@ -14,6 +14,16 @@ namespace Business.Financeiro
             return categoriaDAL.GetCategoriaList();
         }
 
+        public IQueryable GetAllCategoriaList()
+        {
+            return categoriaDAL.GetAllCategoriaList();
+        }
+
+        public int GetQtdCategoria()
+        {
+            return categoriaDAL.GetQtdCategoria();
+        }
+
         public Categoria GetCategoriaById(int id)
         {
             return categoriaDAL.GetCategoriaById(id);
