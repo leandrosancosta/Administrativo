@@ -46,7 +46,7 @@ namespace Service.Areas.Financeiro.Controllers
         {
             if (catb.GetQtdCategoria() > 0)
             {
-                ViewBag.CategoriaId = new SelectList(catb.GetCategoriaList(), "Id", "Nome");
+                ViewBag.CategoriaId = new SelectList(catb.GetActivedCategorias(), "Id", "Nome");
             }
             if (cob.GetQtdCobrancas() > 0)
             {

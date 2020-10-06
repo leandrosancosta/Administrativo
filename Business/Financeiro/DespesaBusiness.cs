@@ -9,11 +9,11 @@ namespace Business.Financeiro
 {
     public class DespesaBusiness
     {
-        DespesaDAL despesa = new DespesaDAL();
+        DespesaDAL despesaDAL = new DespesaDAL();
 
         public IQueryable GetCategoriaList()
         {
-            return despesa.GetDespesasList();
+            return despesaDAL.GetDespesasList();
         }
     }
 }

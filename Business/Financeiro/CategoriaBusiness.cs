@@ -1,6 +1,7 @@
 ﻿using Core.Financeiro;
 using Repository.DAL.Financeiro;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Business.Financeiro
@@ -12,6 +13,11 @@ namespace Business.Financeiro
         public IQueryable GetCategoriaList()
         {
             return categoriaDAL.GetCategoriaList();
+        }
+
+        public List<Categoria> GetActivedCategorias()
+        {
+            return categoriaDAL.GetActivedCategorias();
         }
 
         public IQueryable GetAllCategoriaList()
