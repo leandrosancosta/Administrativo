@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Data.Entity;
 using Core.Financeiro;
+using MySql.Data.MySqlClient;
 
 namespace Repository.DAL.Financeiro
 {
