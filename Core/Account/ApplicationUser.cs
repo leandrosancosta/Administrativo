@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Core.Account
 {
-    public class ApplicationUser : IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>, IUser
+    public class ApplicationUser : IdentityUser
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -19,8 +19,5 @@ namespace Core.Account
             // Adicionar declarações de usuário personalizado aqui
             return userIdentity;
         }
-        public virtual ICollection<TRole> Roles { get; private set; }
-        public virtual ICollection<TClaim> Claims { get; private set; }
-        public virtual ICollection<TLogin> Logins { get; private set; }
     }
 }

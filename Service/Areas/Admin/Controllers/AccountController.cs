@@ -12,6 +12,8 @@ namespace Service.Areas.Admin.Controllers
 {
     public class AccountController : Controller
     {
+
+        #region usercontrol
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -50,6 +52,7 @@ namespace Service.Areas.Admin.Controllers
                 _userManager = value;
             }
         }
+        #endregion
 
         // GET: Admin/Account
         public ActionResult Index()
@@ -59,6 +62,13 @@ namespace Service.Areas.Admin.Controllers
 
         [AllowAnonymous]
         public ActionResult Login()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Login(LoginViewModel login)
         {
             return View();
         }

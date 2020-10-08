@@ -7,13 +7,13 @@ namespace Repository.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class DespesaMigration : IMigrationMetadata
+    public sealed partial class RefactoryTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DespesaMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RefactoryTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009291932159_DespesaMigration"; }
+            get { return "202010081355522_RefactoryTables"; }
         }
         
         string IMigrationMetadata.Source

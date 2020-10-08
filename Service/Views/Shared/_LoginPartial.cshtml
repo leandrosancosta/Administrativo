@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <ul class="nav justify-content-end">
+            <li class="nav-item dropdown">
+                <a class="nav-link text-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Financeiro</a>
+                <div class="dropdown-menu dropdown-menu-right bg-dark">
+                    @Html.ActionLink("Despesas", "Index", "Despesa", new { area = "Financeiro" }, new { @class = "nav-link active text-light" })
+                </div>
+            </li>
+        </ul>
+}
+else
+{
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            @Html.ActionLink("Sign In", "Login", "Account", new { area = "Admin" }, new { @class = "nav-link text-light" })
+        </li>
+        <li class="nav-item">
+            @Html.ActionLink("Sign Up", "Register", "Account", new { area = "Admin" }, new { @class = "nav-link text-light" })
+        </li>
+    </ul>
+}

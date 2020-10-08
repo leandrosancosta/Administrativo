@@ -77,17 +77,9 @@
     <Compile Include="DAL\Financeiro\CobrancaDAL.cs" />
     <Compile Include="DAL\Financeiro\DespesaDAL.cs" />
     <Compile Include="DAL\Padrao\PadraoContext.cs" />
-    <Compile Include="Migrations\202009291932159_DespesaMigration.cs" />
-    <Compile Include="Migrations\202009291932159_DespesaMigration.designer.cs">
-      <DependentUpon>202009291932159_DespesaMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009291942430_CategoriaTable.cs" />
-    <Compile Include="Migrations\202009291942430_CategoriaTable.designer.cs">
-      <DependentUpon>202009291942430_CategoriaTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010031456157_CobrancaTable.cs" />
-    <Compile Include="Migrations\202010031456157_CobrancaTable.designer.cs">
-      <DependentUpon>202010031456157_CobrancaTable.cs</DependentUpon>
+    <Compile Include="Migrations\202010081355522_RefactoryTables.cs" />
+    <Compile Include="Migrations\202010081355522_RefactoryTables.designer.cs">
+      <DependentUpon>202010081355522_RefactoryTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\MySqlHistoryContext.cs" />
@@ -104,17 +96,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009291932159_DespesaMigration.resx">
-      <DependentUpon>202009291932159_DespesaMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009291942430_CategoriaTable.resx">
-      <DependentUpon>202009291942430_CategoriaTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010031456157_CobrancaTable.resx">
-      <DependentUpon>202010031456157_CobrancaTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010081355522_RefactoryTables.resx">
+      <DependentUpon>202010081355522_RefactoryTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using Core.Account;
 
 namespace Core.Financeiro
 {
@@ -17,7 +18,10 @@ namespace Core.Financeiro
         public string Observacao { get; set; }
         public DateTime Create { get; set; }
         public DateTime Modified { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public string UserId { get; set; }
 
+        public ApplicationUser User { get; set; }
         public Cobranca Cobranca { get; set; }
         public Categoria Categoria { get; set; }
     }
