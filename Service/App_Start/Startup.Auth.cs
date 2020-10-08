@@ -1,18 +1,20 @@
 ﻿using System;
+using Core.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 
 using Owin;
-using Service.Models;
+using Repository.Context;
+
 
 namespace Service
 {
 	public partial class Startup
 	{
         // Para obter mais informações sobre a autenticação de configuração, visite https://go.microsoft.com/fwlink/?LinkId=301864
-        public void ConfigureAuth(IAppBuilder app)
+        public static void ConfigureAuth(IAppBuilder app)
         {
             // Configure o contexto db, gerenciador de usuários e gerenciador de login para usar uma única instância por solicitação
             app.CreatePerOwinContext(ApplicationDbContext.Create);

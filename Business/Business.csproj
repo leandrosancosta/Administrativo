@@ -46,7 +46,9 @@
     <Compile Include="Financeiro\DespesaBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{bf94a3f4-f151-460b-b431-351699816e76}</Project>

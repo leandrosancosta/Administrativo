@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNet.Identity.Owin;
+﻿using Core.Account;
+using Microsoft.AspNet.Identity.Owin;
 using Service.Areas.Admin.Models;
-using Service.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -190,10 +190,6 @@
     </Compile>
     <Compile Include="Areas\Financeiro\Models\CategoriaView.cs" />
     <Compile Include="Areas\Financeiro\Models\FinanceiroBaseView.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Migrations\MySqlHistoryContext.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="MySqlInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -361,6 +357,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Financeiro\Views\Shared\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -381,6 +378,10 @@
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{bf94a3f4-f151-460b-b431-351699816e76}</Project>
       <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{DA854594-2F9D-4C13-8DAD-ADA792C45682}</Project>
+      <Name>Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
